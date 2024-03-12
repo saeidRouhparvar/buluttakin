@@ -23,8 +23,9 @@ const NavigationDraw = ({ icon, path, title, ...reset }: Props) => {
         className={pathname.indexOf(path) != -1 ? style.line : style.line_cover}></div>
       <div className={style.content}>
         <div className="">{icon}</div>
-        <div className={style.title}>
-          <div>{title}</div>
+        <div className={style.title} >
+          <span>{title}</span>
+         
           <div
             className={
               pathname.indexOf(path) != -1
