@@ -1,0 +1,56 @@
+.main_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: #101828;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27px;
+}
+
+.badge_green {
+  color: #027a48;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27px;
+  border-radius: 40px;
+  background: #d1fadf;
+  padding: 0.25rem 0.5rem;
+  width: 4.75rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: -1rem;
+  margin-top: .75rem;
+}
+.badge_red {
+  color: #F04438;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27px;
+  border-radius: 40px;
+  background: #FEE4E2;
+  padding: 0.25rem 0.5rem;
+  width: 4.75rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: -1rem;
+  margin-top: .75rem;
+}
+
+.badge_ {
+  display: flex;
+  justify-content: space-between;
+}
+
+.data {
+  color: #101828;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+}
