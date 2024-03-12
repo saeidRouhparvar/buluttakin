@@ -1,0 +1,9 @@
+.main_side {
+    display: flex;
+    flex-direction: column;
+}
+
+.side_header {
+    display: flex;
+    justify-content: space-between;
+}
