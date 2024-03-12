@@ -1,0 +1,16 @@
+.main_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.title {
+    color: var(--Gray-900, #101828);
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
