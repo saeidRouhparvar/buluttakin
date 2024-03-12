@@ -1,0 +1,26 @@
+.main_content {
+  gap: 0.5rem;
+}
+.price_cost {
+  width: 100%;
+  height: 12.5rem;
+}
+.price,.sign {
+  color: #101828;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.title {
+  color: #475467;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 21px;
+}
+.prices{
+  display: flex;
+  justify-content: unset;
+}
