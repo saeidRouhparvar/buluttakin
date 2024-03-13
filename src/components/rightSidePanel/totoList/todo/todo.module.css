@@ -1,0 +1,35 @@
+.main_content {
+  display: flex;
+  gap: 1rem;
+}
+
+.icon {
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: #f9f5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.main_title {
+  color: #101828;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.date {
+  color: #98a2b3;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
