@@ -1,0 +1,44 @@
+.container {
+    border: 1px solid #EAECF0;
+    border-radius: 1.5rem;
+}
+
+.main_content {
+  padding: 0.5rem;
+  color: #101828;
+}
+
+.formation_header {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.formation_title {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 1rem;
+}
+.progress {
+  background-color: #d0d5dd;
+  border-radius: 1rem;
+  height: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.625rem;
+}
+.bar {
+  width: 60%;
+  height: 1.25rem;
+  background-color: #6941c6;
+  border-radius: 1rem;
+
+}
+.formation_title:nth-child(5){
+    color: #667085;
+}
+.btn {
+    margin-top: 1.625rem;
+}
