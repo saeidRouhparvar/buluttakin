@@ -1,9 +1,68 @@
 .main_side {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .side_header {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.message,
+.notif {
+  position: relative;
+}
+
+.message_sign {
+  position: absolute;
+  top: 2px;
+  right: -2px;
+  width: 0.75rem;
+  height: 0.5rem;
+  background-color: white;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notif_sign {
+  font-size: 8px;
+  color: #f04438;
+  font-weight: 900;
+  position: absolute;
+  top: 6px;
+  right: 12px;
+}
+
+.formation {
+  margin-top: 1rem;
+}
+
+.todo {
+  margin-top: 1rem;
+}
+
+.modal_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.add_ {
+  color: #6941c6;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+
+.title_input {
+width: 100%;
 }
