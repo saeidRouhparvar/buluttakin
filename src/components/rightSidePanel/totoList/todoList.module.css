@@ -1,0 +1,43 @@
+.main_content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header {
+  color: #101828;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 43px;
+}
+
+.todo_data {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.add_todo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.add_icon {
+  background-color: #e9d7fe;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add_title {
+  color: #101828;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
