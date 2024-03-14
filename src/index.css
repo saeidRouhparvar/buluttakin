@@ -19,3 +19,17 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+*{
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 6px;
+  max-width: 1vw;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 50px;
+}
