@@ -32,9 +32,9 @@ const TodoList = ({onClick}:Props) => {
         ))}
       </div>
 
-      <div className={style.add_todo}>
+      <div className={style.add_todo}  onClick={onClick}>
         <div className={style.add_icon}>{addIcon}</div>
-        <div className={style.add_title} onClick={onClick}>Add to Do</div>
+        <div className={style.add_title}>Add to Do</div>
       </div>
     </div>
   );
