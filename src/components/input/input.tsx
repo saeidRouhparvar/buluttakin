@@ -1,28 +1,41 @@
 import { ChangeEvent, useState } from "react";
-import { closeBtn } from "../Svg";
+import { closeBtn, searchIcon } from "../Svg";
 import style from "./input.module.css";
 
 interface InputProps {
   type?: string;
   placeholder?: string;
-  isIcon?:boolean
+  isIcon?: boolean;
+  isSearchIcon?: boolean;
 }
 
-const Input = ({ type, placeholder,isIcon }: InputProps) => {
+const Input = ({ type, placeholder, isIcon, isSearchIcon }: InputProps) => {
   const [remove, setRemove] = useState<string>();
 
   const removeHandler = () => {
-    setRemove('')
+    setRemove("");
   };
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setRemove(e.target.value)
-  }
+    setRemove(e.target.value);
+  };
 
   return (
     <div className={style.input_content}>
-      <input type={type} value={remove} onChange={onChangeHandler} placeholder={placeholder} />
-      <div className={isIcon ? style.remove : style.none} onClick={removeHandler}>
+      <div className={isSearchIcon ? style.search : style.none}>
+        {searchIcon}
+      </div>
+      <input
+        className={isSearchIcon ? style.search_place : ""}
+        type={type}
+        value={remove}
+        onChange={onChangeHandler}
+        placeholder={placeholder}
+      />
+      <div
+        className={isIcon ? style.remove : style.none}
+        onClick={removeHandler}
+      >
         {closeBtn}
       </div>
     </div>
