@@ -45,6 +45,15 @@
   padding: 1rem 1.5rem;
 }
 .close {
-    cursor: pointer;
+  cursor: pointer;
 }
 
+.modal_btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  width: 200px;
+}
