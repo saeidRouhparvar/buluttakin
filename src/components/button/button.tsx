@@ -1,11 +1,31 @@
-import style from './button.module.css'
+import style from "./button.module.css";
 
-const Button = ({children} : {children:string}) => {
-    return (
-<button className={style.button}>
-    {children}
-</button>
-    )
+interface ButtonProps {
+  type: "primary" | "secoundry";
+  children?: string;
+  size?:string
+  onClick?:() => void
 }
 
-export default Button
+const Button = ({ children, type ,size,onClick}: ButtonProps) => {
+  return (
+    <button
+    type="submit"
+    onClick={onClick}
+    style={
+        {height:size}
+    }
+      className={
+        type === "primary"
+          ? style.primaryButton
+          : type === "secoundry"
+          ? style.secoundryButton
+          : ""
+      }
+    >
+      {children}
+    </button>
+  );
+};
+
+export default Button;

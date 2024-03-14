@@ -1,17 +1,31 @@
-.button {
-    width: 100%;
-    height: 2.625rem;
-    background-color: #6941C6;
-    border-radius: .5rem;
-    border: none;
-    color: white;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
+.primaryButton {
+  width: 100%;
+  background-color: #6941c6;
+  border-radius: 0.5rem;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.5rem;
 }
-.button:hover {
-    opacity: .9;
+.secoundryButton {
+  width: 100%;
+  background-color: #f4ebff;
+  border-radius: 0.5rem;
+  border: none;
+  color: #6941c6;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
 }
-.button:active {
-    background-color: #442f75;
+.primaryButton:hover,
+.secoundryButton:hover {
+  opacity: 0.9;
+}
+.primaryButton:active {
+  background-color: #442f75;
+}
+.secoundryButton:active {
+  background-color: #bbabe0;
 }
