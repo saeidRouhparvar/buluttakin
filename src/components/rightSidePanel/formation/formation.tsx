@@ -15,7 +15,7 @@ const Formation = () => {
         <div className={style.formation_title}>Estimated processing</div>
         <div className={style.formation_title}>4-5 business days</div>
         <div className={style.btn}></div>
-        <Button children="View status"/>
+        <Button type="primary" size="2.625rem" children="View status"/>
       </div>
     </PanelBox></div>
   );
