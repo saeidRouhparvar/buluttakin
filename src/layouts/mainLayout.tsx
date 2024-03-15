@@ -4,6 +4,7 @@ import NavigationDraw from "../components/navigation/navigationDraw";
 import { router } from "../routes";
 import { Outlet } from "react-router-dom";
 import { leftArrow, logo, rightArrow, setting } from "../components/Svg";
+import RightSidePanel from "../components/rightSidePanel/rightSidePanel";
 
 const MainLayout = () => {
   const [toggle, setToggle] = useState(true);
@@ -27,6 +28,7 @@ const MainLayout = () => {
               title={item?.name}
               icon={item?.icon}
               path={item?.path}
+              iconStyle={"1rem"}
             />
           </div>
         ))
@@ -35,23 +37,29 @@ const MainLayout = () => {
 
   return (
     <div className={style.mainLayout}>
+
       <div className={toggle ? style.sideBar : style.sidbar_arrow_open}>
         <div className={style.sidbar_arrow} onClick={sidbarToggleHandler}>
           {toggle ? leftArrow : rightArrow}
         </div>
         <div className={style.nav}>
-          <div className={style.logo}>{logo}</div>
+          <div className={style.logo_open}>{logo}</div>
           {nav}
         </div>
 
         <div className={style.setting}>
-          <NavigationDraw path="setting" icon={setting} title="Setting" />
+          <NavigationDraw path="setting" iconStyle={"1rem"} icon={setting} title="Setting" />
         </div>
       </div>
+
       <div className={style.main}>
         <Suspense>
           <Outlet />
         </Suspense>
+      </div>
+
+      <div className={style.right_bar}>
+      <RightSidePanel />
       </div>
     </div>
   );
