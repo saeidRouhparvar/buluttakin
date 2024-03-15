@@ -11,7 +11,7 @@ import {
 } from "../components/Svg";
 import MainLayout from "../layouts/mainLayout";
 import Dashboard from "../components/dashboard/dashboard";
-import Redirect from "../components/redirect";
+import Redirect from "../components/Redirect";
 
 const router = [
   {
