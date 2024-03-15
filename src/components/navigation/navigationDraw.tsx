@@ -7,9 +7,10 @@ interface Props {
   title?: string;
   icon?: ReactNode;
   path: string;
+  iconStyle?:string
 }
 
-const NavigationDraw = ({ icon, path, title, ...reset }: Props) => {
+const NavigationDraw = ({ icon, path, title,iconStyle, ...reset }: Props) => {
   const navigate = useNavigate();
   const navigateHandling = () => {
     navigate("/" + path);
@@ -20,12 +21,13 @@ const NavigationDraw = ({ icon, path, title, ...reset }: Props) => {
   return (
     <div className={style.navigatin} {...reset} onClick={navigateHandling}>
       <div
-        className={pathname.indexOf(path) != -1 ? style.line : style.line_cover}></div>
+        className={pathname.indexOf(path) != -1 ? style.line : style.line_cover}
+      ></div>
       <div className={style.content}>
-        <div className="">{icon}</div>
-        <div className={style.title} >
+        <div style={{marginLeft:iconStyle}}>{icon}</div>
+        <div className={style.title}>
           <span>{title}</span>
-         
+
           <div
             className={
               pathname.indexOf(path) != -1
