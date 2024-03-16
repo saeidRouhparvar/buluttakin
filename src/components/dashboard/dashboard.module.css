@@ -44,14 +44,49 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  flex:1.15;
+  flex: 1.15;
 }
 
+canvas {
+  width: 100% !important;
+  height: 12rem !important;
+}
+.chart_title {
+  margin-bottom: 1rem;
+  color: #101828;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
 .r_chart {
   flex: 3;
+  background-color: #fff;
+  border-radius: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  height: 18.9rem;
+  width: 100%;
 }
 .r_chart img {
   width: 37.5rem;
+}
+.chart_label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  
+}
+
+.label {
+  color: #101828;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: .5rem;
+  display: flex;
+  gap: .5rem;
 }
 
 .email_list {
