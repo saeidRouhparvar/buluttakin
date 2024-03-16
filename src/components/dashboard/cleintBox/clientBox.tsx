@@ -10,7 +10,7 @@ interface Props {
 
 const CleintBox = ({ title, badge, data, type }: Props) => {
   return (
-    <PanelBox>
+    <PanelBox type="border1">
       <div className={style.main_content}>
         <div className={style.title}>{title}</div>
         <div className={style.badge_}>
