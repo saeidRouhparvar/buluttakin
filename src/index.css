@@ -1,35 +1,50 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
 
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
-
 
 
 body {
-  margin: 0;
-  font-family: 'Roboto';
-  /* place-items: center; */
-  min-width: 320px;
-  min-height: 100vh;
+    margin: 0;
+    font-family: 'Roboto';
+    /* place-items: center; */
+    min-width: 320px;
+    min-height: 100vh;
 }
-*{
-  box-sizing: border-box;
+
+* {
+    box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
-  background-color: transparent;
-  width: 6px;
-  max-width: 1vw;
+    background-color: transparent;
+    width: 6px;
+    max-width: 1vw;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: gray;
-  border-radius: 50px;
+    background-color: gray;
+    border-radius: 50px;
+}
+
+
+.scrollHidden::-webkit-scrollbar {
+
+    background: transparent !important;
+    width: 0 !important;
+    height: 0;
+
+}
+.scrollHidden::-webkit-scrollbar-thumb {
+
+    background-color: transparent !important;
+    border-radius: 0px !important;
+
 }
