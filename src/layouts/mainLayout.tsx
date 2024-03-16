@@ -25,6 +25,7 @@ const MainLayout = () => {
             }}
           >
             <NavigationDraw
+              key={i.path}
               title={item?.name}
               icon={item?.icon}
               path={item?.path}
@@ -37,7 +38,6 @@ const MainLayout = () => {
 
   return (
     <div className={style.mainLayout}>
-
       <div className={toggle ? style.sideBar : style.sidbar_arrow_open}>
         <div className={style.sidbar_arrow} onClick={sidbarToggleHandler}>
           {toggle ? leftArrow : rightArrow}
@@ -48,7 +48,12 @@ const MainLayout = () => {
         </div>
 
         <div className={style.setting}>
-          <NavigationDraw path="setting" iconStyle={"1rem"} icon={setting} title="Setting" />
+          <NavigationDraw
+            path="setting"
+            iconStyle={"1rem"}
+            icon={setting}
+            title="Setting"
+          />
         </div>
       </div>
 
@@ -59,7 +64,7 @@ const MainLayout = () => {
       </div>
 
       <div className={style.right_bar}>
-      <RightSidePanel />
+        <RightSidePanel />
       </div>
     </div>
   );
