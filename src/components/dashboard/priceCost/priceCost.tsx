@@ -11,7 +11,7 @@ interface Props {
 const PriceCost = ({ icon, price, title }: Props) => {
   return (
     <div className={style.price_cost}>
-      <PanelBox>
+      <PanelBox  type="border2">
         <div className={style.main_content}>
           <div className={style.icon}>{icon}</div>
           <div className={style.prices}>
