@@ -12,7 +12,7 @@ interface Props {
 
 const ClientList = ({avatar,name,due,time}:Props) => {
   return (
-    <PanelBox>
+    <PanelBox type="border1">
       <div className={style.main_content}>
         <div className={style.avatar}><Avatar src={`${avatar}`}/></div>
         <div className={style.title}>{name}</div>
