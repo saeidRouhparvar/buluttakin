@@ -19,12 +19,14 @@
   font-weight: 700;
   cursor: pointer;
 }
-.primaryButton:hover,
+.primaryButton:hover{
+  background-color: #B692F6;
+}
 .secoundryButton:hover {
   opacity: 0.9;
 }
 .primaryButton:active {
-  background-color: #442f75;
+  background-color: #42307D;
 }
 .secoundryButton:active {
   background-color: #bbabe0;
