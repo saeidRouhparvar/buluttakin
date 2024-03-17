@@ -9,9 +9,11 @@ import {
   list,
   setting,
 } from "../components/Svg";
-import MainLayout from "../layouts/mainLayout";
-import Dashboard from "../components/dashboard/dashboard";
-import Redirect from "../components/Redirect";
+import React from "react";
+
+const Redirect = React.lazy(() => import("../components/Redirect"));
+const MainLayout = React.lazy(() => import("../layouts/mainLayout"));
+const Dashboard = React.lazy(() => import("../components/dashboard/dashboard"));
 
 const router = [
   {
