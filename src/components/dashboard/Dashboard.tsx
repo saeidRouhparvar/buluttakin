@@ -1,7 +1,6 @@
 import { circlBlack, circlPurple } from "../Svg";
 import LineChart from "../chart/lineChart";
 import ClientList from "../clientList/clientList";
-import PanelBox from "../panelBox/panelBox";
 import SelectBox from "../selectBox/selextBox";
 import CleintBox from "./cleintBox/clientBox";
 import style from "./dashboard.module.css";
