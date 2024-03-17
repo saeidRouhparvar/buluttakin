@@ -8,14 +8,15 @@ interface Props {
   onClose: boolean;
   closeClick:() =>void
   children?:ReactNode
-  acceptClick?:() => void
+  acceptClick?:any
   cancelClick?:() => void
+  ref?:any
 }
 
-const Modal = ({ isOpen, onClose ,closeClick,acceptClick,cancelClick,children}: Props) => {
+const Modal = ({ isOpen,ref, onClose ,closeClick,acceptClick,cancelClick,children}: Props) => {
 
   return (
-    <div className={onClose ? style.main_open : style.main_}>
+    <div className={onClose ? style.main_open : style.main_} ref={ref}>
       <div
         className={isOpen ? style.main_modal_open : style.main_modal}
         id="modal"

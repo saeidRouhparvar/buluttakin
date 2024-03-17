@@ -26,15 +26,22 @@ const NavigationDraw = ({ icon, path, title,iconStyle, ...reset }: Props) => {
       <div className={style.content}>
         <div style={{marginLeft:iconStyle}}>{icon}</div>
         <div className={style.title}>
-          <span>{title}</span>
-
-          <div
+          <span>
+            <div style={{display:"inline-block"}}>
+            {title}
+            <div
             className={
               pathname.indexOf(path) != -1
                 ? style.under_line
                 : style.under_line_cover
             }
           ></div>
+            </div>
+
+            
+           </span>
+
+        
         </div>
       </div>
     </div>

@@ -62,11 +62,40 @@
   line-height: 32px;
 }
 
-
 .title_input {
-width: 100%;
+  width: 100%;
 }
 
 .select {
   width: 100%;
+}
+
+.rightFooter {
+  padding: 1rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.title {
+  color: #101828;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.date {
+  color: #98a2b3;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.desc {
+  color: #98a2b3;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
