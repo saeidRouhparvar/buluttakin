@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import style from "./todo.module.css";
 
 interface Props {
@@ -8,6 +8,7 @@ interface Props {
 }
 
 const Todo = ({icon,title,date}:Props) => {
+
   return (
     <div className={style.main_content}>
       <div className={style.icon}>{icon}</div>

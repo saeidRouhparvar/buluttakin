@@ -29,6 +29,11 @@
   letter-spacing: 0.5px;
 }
 
+.select_line:hover,
+.select_line_checked:hover{
+  background-color: rgb(232, 232, 234);
+}
+
 .input {
   width: 1.125rem;
   height: 1.125rem;

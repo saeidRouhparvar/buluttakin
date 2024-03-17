@@ -1,7 +1,19 @@
 .select_box {
   border: 1px solid #101828;
   border-radius: 0.25rem;
+  position: relative !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.select_box_active {
+  border: 1px solid #101828;
+  border-radius: 0.25rem;
   position: relative;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 0.5rem;
 }
 .select {
   cursor: pointer;
@@ -19,13 +31,53 @@
   padding: 0 0.2rem;
   background-color: #f2f4f7;
   z-index: 9;
+  transition: all 0.3s ease-in-out;
 }
 
 .arrow_select {
   position: absolute;
   right: 0.5rem;
   display: flex;
-  top: 0.5rem;
+  padding: 0.5rem;
+  transition: all 0.3s ease-in-out;
+  border-radius: 100%;
+}
+.arrow_select_up {
+  position: absolute;
+  right: 0.5rem;
+  display: flex;
+  padding: 0.5rem;
+  transition: all 0.3s ease-in-out;
+  border-radius: 100%;
+  transform: rotate(180deg);
+}
+
+.chips {
+  display: flex;
+  align-items: center;
+  width: 89%;
+  overflow: auto;
+  height: 90px;
+}
+
+.chips_ {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: left;
+}
+
+.arrow_select:hover {
+  background-color: rgb(232, 231, 231);
+}
+.arrow_select:active {
+  background-color: rgb(209, 213, 210);
+}
+
+.under_menu {
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #475467;
+  padding: 0.5rem 0.75rem;
 }
 
 .select_ {
@@ -34,7 +86,7 @@
   overflow-y: scroll;
   height: 40vh;
   position: absolute;
-  top: 5rem;
+  top: 4rem;
 }
 
 ._box {
@@ -51,8 +103,9 @@
   padding: 0 10px;
 }
 .placeholder {
-  padding-top: 8px;
+  transition: all 0.3s ease-in-out;
   padding-left: 10px;
+  white-space: nowrap;
 }
 
 .form {
@@ -68,4 +121,64 @@
   height: 3rem;
   bottom: 0;
   width: 100%;
+}
+
+.input {
+  height: 100%;
+  width: 90%;
+  background-color: transparent;
+  padding: 0 1rem;
+  border: none;
+  outline: none;
+
+  color: #101828;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+.input_hid {
+  display: none;
+}
+.container {
+  position: relative;
+}
+
+.footer {
+  background-color: #fff;
+  position: sticky;
+  bottom: 0rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border-top: 1px solid #EAECF0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.clear {
+  color: #1570ef;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+.clear:hover {
+  color: #b692f6;
+}
+.clear:active {
+  color: #42307d;
+}
+
+.len {
+  color: #101828;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
 }

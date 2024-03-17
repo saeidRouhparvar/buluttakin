@@ -2,121 +2,181 @@ import { arrowSelect } from "../Svg";
 import Button from "../button/button";
 import Chips from "../chips/chips";
 import Input from "../input/input";
-import PanelBox from "../panelBox/panelBox";
 import style from "./selectBox.module.css";
-import { ChangeEvent, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import SelectItem from "./selectItem/selectItem";
+import useOutsideClick from "../../hooks/useOutsideClick.tsx";
 
 interface SelectProps {
   placeholder?: string;
   onApply?: (data: unknown) => void;
   height?: string;
   width?: string;
-  src?: string;
-  slectSrc?:string
-  isAvatar?:boolean
-  itemSrc?:string
-  isSrc?: boolean;
+  isAvatar?: boolean;
+  type?: "todo" | "employs";
+  chipsSrc?:string
   listItem?: Array<{
     id?: number;
     name?: string;
-    value?: number;
-    src?: string;
+    value?: string;
+    itemSrc?: string;
   }>;
 }
 
-// const listItem = [
-//   { id: 1, name: "Saeid", value: 1 },
-//   { id: 2, name: "Pouriya", value: 2 },
-//   { id: 3, name: "Bita", value: 3 },
-//   { id: 4, name: "Zahra", value: 4 },
-//   { id: 5, name: "Ali", value: 5 },
-//   { id: 6, name: "Lian", value: 6 },
-//   { id: 7, name: "Sajad", value: 7 },
-//   { id: 8, name: "Khashayar", value: 8 },
-// ];
+interface ListInterface {
+  active?: boolean;
+  id?: number;
+  name?: string;
+  value?: string;
+  itemSrc?: string;
+}
 
 const SelectBox = ({
   placeholder,
   listItem,
-  isSrc,
-  src,
-  slectSrc,
-  isAvatar,
   width,
-  onApply,
   height,
+  type,isAvatar
 }: SelectProps) => {
   const [active, setActive] = useState(false);
-  const [chacked, setChecked] = useState("");
+  const [name, setName] = useState("");
+  const [list, setList] = useState<Array<ListInterface>>([]);
+  useEffect(() => {
+    let temp: any = listItem?.map((item: any) => {
+      item.active = false;
+      return item;
+    });
 
-  // const checkedHandler = (e: ChangeEvent<HTMLInputElement>) => {
-  //   setChecked(e.target.value);
-  // };
+    setList(temp);
+  }, [listItem]);
+
+  const activeHandler = () => {
+    setActive(!active);
+  };
+
+  const filtered = list?.filter((item) =>
+    item?.name?.toLowerCase().includes(name.toLowerCase())
+  );
+
+  const ref: any = useRef();
+
+  useOutsideClick(ref, () => {
+    setActive(false);
+  });
+
+  const count = useMemo(() => {
+    
+        return [...list].filter((item) => (
+             item.active
+        )).length
+
+  },[list])
 
   return (
-    <div className={style.container}>
+    <div className={style.container} ref={ref}>
       <div className={style.select}>
         <div
-          className={style.select_box}
+          className={!active ? style.select_box : style.select_box_active}
           style={{ height: height, width: width }}
         >
-          <div className={style.select_title}>Employes involved</div>
+          {active && (
+            <input
+              type="text"
+              className={!active ? style.input : style.input_hid}
+            />
+          )}
+          {active && <div className={style.select_title}>{placeholder}</div>}
           <div
-            className={style.arrow_select}
-            onClick={() => {
-              setActive(!active);
-            }}
+            className={!active ? style.arrow_select : style.arrow_select_up}
+            onClick={activeHandler}
           >
             {arrowSelect}
           </div>
 
-          <div className={style.placeholder}>
-            {chacked && active ? "" : placeholder}
+          <div className={style.placeholder}>{(!active  ) ?placeholder: ""}</div>
+          <div className={style.chips + "  scrollHidden"}>
+            <div className={style.chips_ + "  scrollHidden"}>
+              {list
+                ?.filter((item) => item.active)
+                .reverse()
+                .map((i) => (
+                  <Chips
+                    title={`${i?.name}`}
+                    isSrc={isAvatar}
+                    src={i?.itemSrc}
+                    onClick={() => {
+                      setList(
+                        list.map((it) => {
+                          if (it.name == i.name) {
+                            it.active = false;
+                          }
+                          return it;
+                        })
+                      );
+                    }}
+                  />
+                ))}
+            </div>
           </div>
-          {chacked && (
-            <Chips
-              title={`${chacked}`}
-              isSrc={isSrc}
-              src={src}
-              onClick={() => {}}
-            />
-          )}
         </div>
         {active && (
           <div className={style.select_} style={{ width: width }}>
-            <PanelBox>
+            <div className={style.under_menu}>
               <div className={style._box}>
                 <div className={style.search_box}>
-                  <Input isSearchIcon placeholder={"Search Values"} />
+                  <Input
+                    onChangeHandler={(e:any) => setName(e.target.value)}
+                    placeholder={"Search Values"}
+                    isSearchIcon
+                  />
                 </div>
                 <form
                   action=""
                   className={style.form}
-                  onSubmit={(e: ChangeEvent<HTMLFormElement>) => {
-                    e.preventDefault();
-                    Object.keys(e.target).map((item) => {
-                      console.log(e.target[item]);
-                    });
-                  }}
                 >
-                  {listItem?.map((item) => (
+                  {filtered?.map((item) => (
                     <SelectItem
+                      active={item.active}
                       value={item.name}
                       name={item.name}
-                      onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                        setChecked(e.target.value)
-                      }
+                      onChange={(e) => {
+                        const name = e?.target?.name;
+                        const tempList = [...list].map((it) => {
+                          if (it.name == name) {
+                            it.active = !it.active;
+                          }
+                          return it;
+                        });
+                        setList(tempList);
+                      }}
                       isAvatar={isAvatar}
-                      listSrc={slectSrc}
+                      listSrc={item?.itemSrc}
                     />
                   ))}
+                  <div className={style.footer}>
+                    <div className={style.len}>Selected: {count}</div>
+                    <div
+                      className={style.clear}
+                      onClick={() => {
+                        setList(
+                          [...list].map((it) => {
+                            it.active = false;
+                            return it;
+                          })
+                        );
+                      }}
+                    >
+                      Clear selected
+                    </div>
+                  </div>
                 </form>
-                <div className={style.apply_btn}>
-                  <Button type="primary" children="Apply" size="2.5rem" />
-                </div>
+                {type === "employs" && (
+                  <div className={style.apply_btn}>
+                    <Button type="primary" children="Apply" size="2.5rem" />
+                  </div>
+                )}
               </div>
-            </PanelBox>
+            </div>
           </div>
         )}
       </div>

@@ -12,7 +12,6 @@ const MainLayout = () => {
   const sidbarToggleHandler = () => {
     setToggle(!toggle);
   };
-  console.log(toggle);
 
   const nav = useMemo(() => {
     return router
@@ -29,7 +28,7 @@ const MainLayout = () => {
               title={item?.name}
               icon={item?.icon}
               path={item?.path}
-              iconStyle={"1rem"}
+              iconStyle={"1rem" }
             />
           </div>
         ))
