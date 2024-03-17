@@ -7,18 +7,13 @@ interface InputProps {
   placeholder?: string;
   isIcon?: boolean;
   isSearchIcon?: boolean;
+  value?:any
+  removeHandler?:any
+  onChangeHandler?:(data:any) =>void
 }
 
-const Input = ({ type, placeholder, isIcon, isSearchIcon }: InputProps) => {
-  const [remove, setRemove] = useState<string>();
+const Input = ({ type,value,onChangeHandler,removeHandler, placeholder, isIcon, isSearchIcon }: InputProps) => {
 
-  const removeHandler = () => {
-    setRemove("");
-  };
-
-  const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setRemove(e.target.value);
-  };
 
   return (
     <div className={style.input_content}>
@@ -28,13 +23,13 @@ const Input = ({ type, placeholder, isIcon, isSearchIcon }: InputProps) => {
       <input
         className={isSearchIcon ? style.search_place : ""}
         type={type}
-        value={remove}
+        value={value}
         onChange={onChangeHandler}
         placeholder={placeholder}
       />
       <div
         className={isIcon ? style.remove : style.none}
-        onClick={removeHandler}
+        onClick={() => removeHandler()}
       >
         {closeBtn}
       </div>
